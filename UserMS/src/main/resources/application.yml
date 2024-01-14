@@ -6,14 +6,10 @@ spring:
     url: jdbc:mysql://localhost:3306/userms_db
     username: root
     password: root  
+    driver-class-name: com.mysql.cj.jdbc.Driver
     
   jpa:
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        ddl-auto: update
-
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true   
     

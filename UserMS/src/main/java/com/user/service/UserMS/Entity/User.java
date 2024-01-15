@@ -26,7 +26,7 @@ public class User {
 	private String email;
 	private String about;
 	
-	@Transient//means it will not be stored in the database
+	@Transient//means it will not be stored in the database.
 	private List<Rating> ratings=new ArrayList<>();
 
 }

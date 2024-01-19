@@ -2,6 +2,8 @@ server:
   port: 9902
   
 spring:
+  application:
+    name: HOTEL-SERVICE
   datasource:
     url: jdbc:postgresql://localhost:5432/hotelms_db
     username: postgres
@@ -15,3 +17,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect   
+        
+eureka:
+  instance:
+    prefer-ip-address: true
+  client   :
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+     defaultZone: http://localhost:9904/eureka             

@@ -2,9 +2,19 @@ server:
   port: 9903
 
 spring:
+  application:
+    name: RATING-SERVICE
   data:
     mongodb:
       uri: mongodb://localhost:27017
       database: ratingms_db
  
+eureka:
+  instance:
+    prefer-ip-address: true
+  client   :
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+     defaultZone: http://localhost:9904/eureka      
     

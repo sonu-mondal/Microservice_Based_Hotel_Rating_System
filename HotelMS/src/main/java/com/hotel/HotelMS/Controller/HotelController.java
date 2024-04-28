@@ -28,7 +28,7 @@ public class HotelController {
 	@PostMapping("/add")
 	public ResponseEntity<Hotel> addHotelDetails(@RequestBody Hotel hotel){
 		Hotel hotel1=this.hotelServiceImpl.addHotelDetails(hotel);
-		return new ResponseEntity<Hotel>(hotel1, HttpStatus.CREATED);
+		return new ResponseEntity<>(hotel1, HttpStatus.CREATED);
 	}
 	
 	//get all hotel

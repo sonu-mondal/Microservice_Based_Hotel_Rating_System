@@ -19,6 +19,8 @@ public class ApiResponse {
 	private boolean success;
 	private HttpStatus status;
 	
+
+
 	public ApiResponse(String message, boolean success) {
 		super();
 		this.message = message;

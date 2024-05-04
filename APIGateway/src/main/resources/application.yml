@@ -1,0 +1,40 @@
+#Eureka server configurations
+
+spring:
+ application:
+  name: API-GATEWAY
+
+#API Gateway configurations
+  
+ cloud:
+  gateway:
+    routes:
+    - id: USER-SERVICE
+      uri: lb://USER-SERVICE  #Here since our service is already registerd with Eureka so just give service name instead of url with lb-loadbalance
+      predicates:
+        - Path=/users/**  # here giving predicates/path mentioned in controller class of user service
+       
+    - id: HOTEL-SERVICE
+      uri: lb://HOTEL-SERVICE  
+      predicates:
+        - Path=/hotels/**  
+       
+    - id: RATING-SERVICE
+      uri: lb://RATING-SERVICE  
+      predicates:
+        - Path=/ratings/**    
+       
+       
+Server:
+ port: 9905  
+
+#Eureka server configurations to register the API-GATEWAY services to Eureka
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9904/eureka/
+  instance:
+    hostname: localhost
